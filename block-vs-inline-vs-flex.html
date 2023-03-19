@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .block div{
+            display: block;
+
+            background-color: yellow;
+            font-size:36px;
+            outline:2px black solid;
+            margin:20px;
+        }
+
+        .block #block2{
+            display: block;
+
+            height:50px;
+            width:50px;
+        }
+
+        .block #block3{
+            display: block;
+
+            width:150px;
+            height:0px;
+            margin-bottom:100px;
+            
+        }
+
+        .inline div{
+            display:inline;
+
+            background-color: yellow;
+            font-size:36px;
+            height:50px; /*no effect*/
+            width:50px; /*no effect*/
+            outline:2px black solid;
+            margin:20px;
+        }
+
+        .inline #inline3{
+            width:0px;
+            height:0px;
+            /* No effect */
+        }
+        .inline-block div{
+            display:inline-block;
+
+            background-color: yellow;
+            font-size:36px;
+            outline:2px black solid;
+            margin:20px;
+        }
+
+        .inline-block #inline-block2{
+            width:50px;
+            height:50px;
+        }
+
+        .inline-block #inline-block3{
+            width:150px;
+            height:0px;
+        }
+        
+        .flex{
+            background-color: rgb(0,0,0,0.1);
+            display:flex;
+            
+            
+        }
+
+        .flex div{
+            background-color: yellow;
+            font-size:36px;
+            height:50px; /*no effect*/
+            width:50px; /*no effect*/
+            outline:2px black solid;
+            margin:0px;
+        }
+
+        .flex #flex3{
+            width:150px;
+        }
+        
+        .inline-flex{
+            background-color: rgb(0,0,0,0.1);
+            display:inline-flex;
+        }
+
+        .inline-flex div{
+            background-color: yellow;
+            font-size:36px;
+            height:50px; /*no effect*/
+            width:50px; /*no effect*/
+            outline:2px black solid;
+            margin:0px;
+        }
+
+        .inline-flex #inline-flex3{
+            height:100px;
+        }
+
+
+        /* justify-content applies on the Main Axis of the container (i.e. x-axis) */
+
+        /* justify-content: flex-start;
+        justify-content: flex-end;
+        justify-content: center;
+        justify-content: space-between;
+        justify-content: space-around;
+        justify-content: space-evenly; */
+
+
+        /* align-items applies on the Cross Axis of the flex container (i.e. y-axis) */
+        /* align-items: flex-start;
+        align-items: flex-end;
+        align-items: center;
+        align-items: stretch;
+        align-items: baseline; */
+
+        .justify-content{
+            height:500px;
+            width:500px;
+            background: rgba(0,0,0,0.1);
+
+            /* these flex properties should be applied to the parent container */
+            display:flex;
+            justify-content:center;
+            align-items: center;
+        }
+
+        .justify-content #justify-content1{
+            height:100px;
+            width:100px;
+            background-color: yellow;
+            border:5px solid red;
+
+
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Inline vs Block vs Inline-block vs Flex</h1>
+
+    <h2>Block</h2>
+    <div class="block">
+        <div id="block1">width is set to default</div>
+        <div id="block2">12345</div>
+        <div id="block3">hi there</div>
+        <p>Rules:
+            <br>1. block is applied by default
+            <br>2. you <b>can</b> define width and height. But default width always occupies the entire line
+            <br>3. content always start in a new line (top-to-bottom)
+            <br>4. no new content can appear besides it
+            <br>5. content <b>can</b> overflow
+            <br>6. whitespaces in content causes it to wrap below, unless there is enough space in the box to accomodate the content
+        </p>   
+    </div>
+
+    <br><hr><br>
+
+    <h2>Inline</h2>
+    <div class="inline">
+        <div id="inline1">12345</div>
+        <div id="inline2">2</div>
+        <div id="inline3">3</div>
+        <p>Rules:
+        <br>1. you <b>cannot</b> define width and height
+        <br>2. box size adjusts itself according to content
+        <br>3. content appears side-by-side
+        <br>4. content <b>cannot</b> overflow
+    </p>
+    </div>
+    
+    
+    <br><hr><br>
+
+    <h2>Inline-block</h2>
+
+    <div class="inline-block">
+        <div id="inline-block1">1234</div>
+        <div id="inline-block2">2468</div>
+        <div id="inline-block3">hi there</div>
+        <p>Rules:
+        <br>1. you <b>can</b> define width and height. But default width and height will occupy content only
+        <br>2. content <b>can</b> overflow
+        <br>3. content appears side-by-side
+        <br>4. content will wrap if there is a whitespace (in content) and also not enough space in the box
+
+    </p>
+    </div>
+
+
+    <br><hr><br>
+
+    <!-- The Flex display attribute requires a parent and several child elements to work -->
+    <!-- aka. the Flex container -->
+        <!-- and the Flex elements -->
+    <h2>Flex</h2>
+`
+
+    <div class="flex"><!-- This is the flex-container-->
+        <!-- These are the flex-elements -->
+        <div id="flex1">1</div>
+        <div id="flex2">2</div>
+        <div id="flex3">3 hi there</div>
+    </div>
+    <p>Usage Requirements:
+        <br>1. the flex display attribute requires a parent and several child elements to work properly
+        <br>2. you must add <b>display:flex</b> to the parent's css property <b>ONLY</b>
+        <br>3. the child elements do not need the flex property
+        <br>4. Though only the parent has the flex property, flex behavior will apply to the child and not the parent.
+    </p>
+    <br>
+    <p>Rules:
+        <br>1. you <b>can</b> define width and height. 
+        <br>2. content <b>can</b> overflow
+        <br>3. content appears side-by-side
+        <br>4. flex-container is behaves as block hence the default width occupies the entire line. the width/height can be modified as needed.
+    </p>
+    
+    <br><hr><br>
+
+    <h2>Inline-Flex</h2>
+
+    <div class="inline-flex"><!-- This is the flex-container-->
+        <!-- These are the flex-elements -->
+        <div id="inline-flex1">1</div>
+        <div id="inline-flex2">2</div>
+        <div id="inline-flex3">3 hi there</div>
+    </div>
+    <p>Usage Requirements:
+        <br>1. the flex display attribute requires a parent and several child elements to work properly
+        <br>2. you must add <b>display:flex</b> to the parent's css property <b>ONLY</b>
+        <br>3. the child elements do not need the flex property
+        <br>4. Though only the parent has the flex property, flex behavior will apply to the child and not the parent.
+    </p>
+    <br>
+    <p>
+    <p>Rules:
+        <br>1. you <b>can</b> define width and height. 
+        <br>2. content <b>can</b> overflow
+        <br>3. content appears side-by-side
+        <br>4. flex-container has inline property hence the container only occupies as much space as the content. height/weight has no effect on the container.
+    </p>
+
+    <br><hr><br>
+
+    <h2>Some extra notes about Flex and Block alignments</h2>
+
+    <div class="justify-content">
+        <div id="justify-content1"></div>
+        <div id="justify-content1"></div>
+    </div>
+    <p>
+        The box above has been given both:<br>
+        1. justify-content:center; //align horizontally<br>
+        2. align-items:center; //align vertically<br>
+        <br>
+        hence it appears right in the middle of the flex-container
+    </p>
+    <hr>
+    <pre> 
+Flex-Only Alignment Properties
+justify-content and align-items (only works on flex elements)
+
+//applies on the Main Axis of the flex-container (i.e. default: x-axis, horizontally)
+justify-content: flex-start;
+justify-content: flex-end;
+justify-content: center;
+justify-content: space-between;
+justify-content: space-around;
+justify-content: space-evenly;
+
+
+//applies on the Cross Axis of the flex-container (i.e. default: y-axis, vertically)
+align-items: flex-start;
+align-items: flex-end;
+align-items: center;
+align-items: stretch;
+align-items: baseline;
+
+NOTE: if you are using flex-direction: column, the main axis will be set to y-axis instead of x-axis. hence, justify-content will apply vertically in this scenario.
+<hr>
+Block-Only Alignment Properties
+text-align and vertical-align (only works on block elements)
+
+//always applies horizontally 
+text-align: left;
+text-align: right;
+text-align: center;
+text-align: justify;
+
+//always applies vertically
+vertical-align: baseline;
+vertical-align: text-top;
+vertical-align: middle;
+vertical-align: bottom;
+vertical-align: text-bottom;
+vertical-align: super;
+vertical-align: sub;
+
+NOTE: direction of text-align and vertical-align cannot be switched
+<hr>
+    </pre>
+</body>
+</html>
