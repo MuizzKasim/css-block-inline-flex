@@ -1,4 +1,4 @@
-# css-block-inline-flex
+# Css: Block vs Inline vs Flex
 A pure html notes exploring the intricacies of three css display properties: 1) Block , 2) Inline, and 3) Flex<br/>
 <br/>
 Css has many confusing properties that also happen to be integral for its proper function. To better understand the css display properties, I made this pure html notes which clarifies the differences between the block, inline and flex properties of css.<br/>  
