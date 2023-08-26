@@ -6,4 +6,4 @@ Css has many confusing properties that also happen to be integral for its proper
 By writing these notes in html, I not only would be able to read it as normal, but I can also dig into the source code files if I ever need to do revision on the proper code syntax.<br/>
 <br/>
 You can access the page by using the following link:<br/>
-https://muizzkasim.github.io/css-block-inline-flex/block-inline-flex.html<br/>
+https://muizzkasim.github.io/css-block-inline-flex/block-vs-inline-vs-flex.html<br/>
